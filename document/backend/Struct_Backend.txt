@@ -1,0 +1,41 @@
+# Tạo folder project
+mkdir guidebook-backend
+cd guidebook-backend
+
+# Khởi tạo npm project
+npm init -y
+# Core dependencies
+npm install express mysql2 cors dotenv
+# Development dependencies  
+npm install -D nodemon
+
+npm install multer
+
+Giải thích:
+express: Web framework cho Node.js
+mysql2: Driver kết nối MySQL (faster than mysql)
+cors: Cho phép frontend gọi API từ domain khác
+dotenv: Quản lý environment variables
+nodemon: Auto restart server khi code thay đổi
+multer:  Multer parse multipart/form-data (file upload format)
+
+
+
+# Tạo cấu trúc thư mục
+mkdir src
+mkdir src/controllers
+mkdir src/routes  
+mkdir src/models
+mkdir src/middleware
+mkdir src/config
+
+
+
+
+
+📁 guidebook-backend/
+├── 📁 config/          👈 CẤU HÌNH (Database connection)
+├── 📁 controllers/     👈 ĐIỀU KHIỂN (Business logic)
+├── 📁 routes/         👈 ĐỊNH TUYẾN (API endpoints)
+├── server.js          👈 KHỞI TẠO SERVER
+└── .env              👈 CẤU HÌNH MÔI TRƯỜNG

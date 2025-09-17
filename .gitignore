@@ -1,0 +1,9 @@
+# --------------------
+# Node / Frontend & Backend
+# --------------------
+node_modules/
+dist/
+build/
+*.log
+*.tmp
+npm-debug.log*

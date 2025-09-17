@@ -1,0 +1,27 @@
+# HTTP client để gọi API backend
+npm install axios
+
+# Router để điều hướng giữa các trang
+npm install react-router-dom
+
+# Icons đẹp và nhẹ 
+npm install lucide-react
+
+# Rich text editor để viết content
+npm install @tinymce/tinymce-react
+
+# Thông báo toast đẹp
+npm install react-hot-toast
+
+# Drag & drop cho sắp xếp categories
+# npm install @dnd-kit/core @dnd-kit/sortable @dnd-kit/utilities
+
+
+Giải thích từng package:
+
+axios = Gọi API dễ dàng (thay thế fetch)
+react-router-dom = Routing SPA (Single Page App)
+lucide-react = 1000+ icons SVG đẹp
+@tinymce/tinymce-react = Editor WYSIWYG professional
+react-hot-toast = Notifications đẹp, lightweight
+//@dnd-kit/* = Drag & drop modern, accessible

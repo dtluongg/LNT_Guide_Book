@@ -1,0 +1,45 @@
+## Tổng quan ý tưởng
+
+- Xây dựng "guide book" dạng web cho nhiều chức năng (module) phần mềm.
+- Giao diện tham khảo như w3schools: Bên trái là danh mục (menu 2 cấp), bên phải là nội dung, khi chọn sẽ hiển thị tương ứng.
+- Admin có thể tạo/sửa/xoá danh mục (cấp 1, cấp 2) và nội dung. Nội dung có thể chứa text, ảnh.
+- Yêu cầu lưu trữ tất cả dữ liệu (danh mục, nội dung) ở dạng SQL, có thể chỉnh sửa/cập nhật.
+- Tích hợp trình soạn thảo trực tiếp (WYSIWYG editor) để admin thao tác dễ dàng.
+
+## Đề xuất kiến trúc triển khai đơn giản và phát triển lâu dài
+
+### 1. Công nghệ đề xuất
+- **Frontend:** ReactJS (hoặc Angular/Vue), tích hợp rich-text editor (VD: TinyMCE, CKEditor, TipTap, Quill...)
+- **Backend:** NodeJS + Express hoặc Django/Flask…
+- **Database:** MySQL hoặc PostgreSQL (SQL-based)
+- **Triển khai:** SPA, có thể mở rộng nhiều module, chức năng.
+
+### 2. Thiết kế Database (gợi ý sơ bộ)
+- **Modules**: Danh sách chức năng chính, cố định
+- **Categories**: Danh mục cấp 1, cấp 2, có thể tạo động, liên kết với module
+- **Contents**: Nội dung của từng danh mục, lưu HTML/text, và liên kết ảnh nếu có
+- **Images**: Bảng lưu file ảnh hoặc link ảnh liên kết với nội dung
+
+### 3. Đặc tả chức năng chi tiết
+- Navbar cố định các module (chức năng chính)
+- Admin vào module, tạo danh mục (cấp 1, cấp 2 tuỳ ý)
+- Khi click danh mục, panel bên phải hiện nội dung, cho phép chỉnh sửa trực tiếp
+- Nội dung có thể chứa text, ảnh, file đính kèm…
+- Lưu chỉnh sửa về database dạng HTML (từ editor)
+- Hỗ trợ upload ảnh, chèn ảnh trong nội dung
+- Dễ mở rộng: Thêm phân quyền, đa ngôn ngữ, lịch sử chỉnh sửa, tìm kiếm, comment, v.v.
+
+### 4. Quy trình thao tác
+1. Chọn module (chức năng chính)
+2. Thao tác CRUD danh mục (cấp 1/cấp 2) bên menu trái
+3. Chọn danh mục, xem/chỉnh sửa nội dung bên phải (editor trực tiếp)
+4. Lưu tất cả thay đổi về database
+
+### 5. Các lưu ý
+- Việc lưu nội dung dạng HTML vào SQL là hoàn toàn hợp lý (giống các hệ thống CMS)
+- Nên lưu ảnh riêng, chỉ lưu link ảnh vào nội dung
+- Sử dụng rich-text editor phổ biến để đảm bảo tương thích, dễ mở rộng
+
+### 6. Hình minh hoạ giao diện (tham khảo)
+
+![Giao diện tham khảo giống w3schools](https://github.com/github-copilot/chat/attachments/f1bb1d04-adaf-4b7c-b332-377afb017a2b)
